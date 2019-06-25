@@ -8,12 +8,12 @@
 
             <h2 id="intro-powered-by-jigsaw" class="font-light mt-4">{{ $page->siteDescription }}</h2>
 
-            <p class="text-lg">Give your documentation a boost with Jigsaw. <br class="hidden sm:block">Generate elegant, static docs quickly and easily.</p>
+            <p class="text-lg">Using Open Source tools to manage our maker space <br class="hidden sm:block">It starts with CiviCRM ...</p>
 
             <div class="flex my-10">
                 <a href="/docs/getting-started" title="{{ $page->siteName }} getting started" class="bg-blue hover:bg-blue-dark font-normal text-white hover:text-white rounded mr-4 py-2 px-6">Get Started</a>
 
-                <a href="https://jigsaw.tighten.co" title="Jigsaw by Tighten" class="bg-grey-light hover:bg-grey-dark text-blue-darkest font-normal hover:text-white rounded py-2 px-6">About Jigsaw</a>
+                <a href="https://civicrm.org/" title="BUILD, ENGAGE, AND ORGANIZE YOUR CONSTITUENTS" class="bg-grey-light hover:bg-grey-dark text-blue-darkest font-normal hover:text-white rounded py-2 px-6">About CiviCRM</a>
             </div>
         </div>
 
@@ -26,25 +26,25 @@
         <div class="mb-8 mx-3 px-2 md:w-1/3">
             <img src="/assets/img/icon-window.svg" class="h-12 w-12" alt="window icon">
 
-            <h3 id="intro-laravel" class="text-2xl text-blue-darkest mb-0">Templating with <br>Laravel's Blade engine</h3>
+            <h3 id="intro-laravel" class="text-2xl text-blue-darkest mb-0">Design based on<br> requirements</h3>
 
-            <p>Blade is a powerful, simple, and beautiful templating language, and now you can use it for your static sites, not just your Laravel-powered apps.</p>
+            <p>Design the CiviCRM implementation to meet the organization's requirements.</p>
         </div>
 
         <div class="mb-8 mx-3 px-2 md:w-1/3">
             <img src="/assets/img/icon-terminal.svg" class="h-12 w-12" alt="terminal icon">
 
-            <h3 id="intro-markdown" class="text-2xl text-blue-darkest mb-0">Use Markdown for <br>content-driven pages</h3>
+            <h3 id="intro-markdown" class="text-2xl text-blue-darkest mb-0">Migrations planning<br> and testing</h3>
 
-            <p>Markdown is the web’s leading format for writing articles, blog posts, documentation, and more. Jigsaw makes it painless to work with Markdown content.</p>
+            <p>Plan how to reuse the existing data and migrate it including Stripe accounts, member records and sign offs.</p>
         </div>
 
         <div class="mx-3 px-2 md:w-1/3">
             <img src="/assets/img/icon-stack.svg" class="h-12 w-12" alt="stack icon">
 
-            <h3 id="intro-mix" class="text-2xl text-blue-darkest mb-0">Compile your assets <br>using Laravel Mix </h3>
+            <h3 id="intro-mix" class="text-2xl text-blue-darkest mb-0">Implement the  <br>design </h3>
 
-            <p>Jigsaw comes pre-configured with Laravel Mix, a simple and powerful build tool. Use the latest frontend tech with just a few lines of code.</p>
+            <p>Figure out the implementation steps and present the overall plan.</p>
         </div>
     </div>
 </section>
