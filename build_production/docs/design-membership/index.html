@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="description" content="blank">
+        <meta name="description" content="How to enumerate the properties of members and attach them to Contact data">
 
         <meta property="og:site_name" content="CiviCRM Nova Labs Documentation"/>
-        <meta property="og:title" content="Blank | CiviCRM Nova Labs Documentation"/>
-        <meta property="og:description" content="blank"/>
+        <meta property="og:title" content="Membership design | CiviCRM Nova Labs Documentation"/>
+        <meta property="og:description" content="How to enumerate the properties of members and attach them to Contact data"/>
         <meta property="og:url" content="https://civicrm-docs.nova-labs.org/docs/design-membership"/>
         <meta property="og:image" content="/assets/img/logo.png"/>
         <meta property="og:type" content="website"/>
@@ -17,7 +17,7 @@
         <meta name="twitter:card" content="summary_large_image">
 
         
-        <title>CiviCRM Nova Labs Documentation | Blank</title>
+        <title>CiviCRM Nova Labs Documentation | Membership design</title>
 
         <link rel="home" href="https://civicrm-docs.nova-labs.org">
         <link rel="icon" href="/favicon.ico">
@@ -156,10 +156,77 @@
         </nav>
 
         <div class="w-full lg:w-3/5 break-words pb-16 lg:pl-4" v-pre>
-            <h1 id="page-header">Page header</h1>
-<p>Start</p>
-<h2 id="page-items">Page items</h2>
-<p>More notes </p>        </div>
+            <h1 id="membership">Membership</h1>
+<p>Each member will need to be a contact in the system to be manageable within CiviCRM.  Additionally, for most users they will also need to be able to log in which will require that they have a matching (WordPress) login.  </p>
+<h2 id="membership-types">Membership Types</h2>
+<h3>Contact</h3>
+<ul>
+<li>We do not store these contacts in Spaceman at all. Only ad hoc lists, MailChimp, or Meetup’s list of people who RSVP’d to meetups. This is new functionality.</li>
+<li>Contacts who are manually entered (other sources, paper interest forms, etc)</li>
+<li>Does not have a login/password</li>
+<li>Can be subscribed to mailing lists (opted in elsewhere)</li>
+<li>May have attended an open house or something, but hasn’t taken a class</li>
+</ul>
+<h3>Guest</h3>
+<ul>
+<li>No requirements</li>
+<li>Default status</li>
+<li>Can take signoff classes, but can’t use the tools unsupervised until they take GO</li>
+<li>Contact + wp_user</li>
+<li>Creates account on nova-labs.org</li>
+<li>Can manage their own mailing list subscriptions</li>
+</ul>
+<h3>Attendee</h3>
+<ul>
+<li>Has taken GO</li>
+<li>Can use signed off tools unsupervised</li>
+<li>Contact + wp_user</li>
+<li>Creates account on nova-labs.org</li>
+<li>Can manage their own mailing list subscriptions</li>
+</ul>
+<h3>Associate</h3>
+<ul>
+<li>Anyone can opt-in for $50/month</li>
+<li>Can’t get the card without taking GO</li>
+<li>Contact + wp_user + Membership (+ Recurring Contribution)</li>
+<li>Submits “join/membership” form on nova-labs.org. If logged in with an existing Guest/Attendee account, form is pre-filled. If not, account and Contact record are created along with Membership.</li>
+<li>Can manage their own mailing list subscriptions</li>
+</ul>
+<h3>Key</h3>
+<ul>
+<li>Sponsored by key and approved by board</li>
+<li>$100/month</li>
+<li>Anyone who has ever been key and lapsed payment can just start paying $100 again and get key privileges back.  One way to do this is have a flag that the membership team can change that allows someone to select key membership, spaceman has an “alumni” status that implements this.</li>
+<li>A record of sponsor/sponsee must be maintained</li>
+<li>Contact + wp_user + Membership (+ Recurring Contribution) + Relationship “Sponsored By”</li>
+<li>In Phase 1, promoting to Key status will be handled manually. Alumni status will be noted on the expired Membership, so membership team can easily see that they are a former member.</li>
+<li>The Spaceman style approach is possible where we only allow users to access the Key level Membership page if they have been given that access by membership team. Or the entire upgrade can be handled manually/in person. For future development, if policies are developed that allow an “apply for Key membership” option that can be implemented as well.</li>
+<li>Key member nominations can be processed via an online form available only to current Key members. This nomination would add a Relationship “Nominated By” to the nominee’s record and could kick off further workflow or notifications.</li>
+</ul>
+<h3>Family Member</h3>
+<ul>
+<li>Only key members can have family members</li>
+<li>Family members have key access and key rights (including sponsorship)</li>
+<li>First is $0/month, $10 after that</li>
+<li>A record family member relations must be maintained</li>
+<li>Contact + wp_user + Membership + Relationship “Family of”</li>
+<li>If $0/mo, use 100% discount code to set up</li>
+<li>Otherwise set up as $10/mo Recurring Contribution</li>
+<li>Expires if primary Key membership expires </li>
+<li>Manually created by membership team</li>
+</ul>
+<h3>Incubator employee (basically identical to family member)</h3>
+<ul>
+<li>Incubator must be key member</li>
+<li>Employees members have key access and key rights (including sponsorship)</li>
+<li>First is $0/month, $10 after that</li>
+<li>A record of names of employers/employees must be maintained</li>
+<li>Contact + wp_user + Membership + Relationship “Employee Of”</li>
+<li>Similar to Family in other respects</li>
+</ul>
+<h2>Other notes</h2>
+<p>Also, we need a way to have “bartered” membership for interns and people with a lot of time to volunteer and not much money.  Only someone on the membership team should be able to make someone “bartered.”  May make sense to handle this as a coupon code.</p>
+<p>If a bartered member is otherwise identical, a membership record with no automatic renewal or associated recurring contribution can be created. This membership could, for instance, be set to expire at the end of the calendar year. If the barter was continued, membership team would go in and change the expiration date on the membership record or create a new membership entry. Membership can also be manually set to expired at any time if the barter relationship ended early.</p>        </div>
     </div>
 </section>
         </main>
@@ -181,7 +248,7 @@
         <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
             <ul class="flex flex-col md:flex-row justify-center list-reset">
                 <li class="md:mr-2">
-                    &copy; <a href="https://tighten.co" title="Tighten website">Tighten</a> 2019.
+                    &copy; <a href="https://www.nova-labs.org" title="Nova Labs website">Nova Labs</a> 2019.
                 </li>
 
                 <li>
