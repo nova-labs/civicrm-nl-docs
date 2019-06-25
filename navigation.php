@@ -3,12 +3,45 @@
 return [
     'Getting Started' => [
         'url' => 'docs/getting-started',
+    ],
+    'Design' => [
+        'url' => 'docs/design-overview',
         'children' => [
-            'Customizing Your Site' => 'docs/customizing-your-site',
-            'Navigation' => 'docs/navigation',
-            'Algolia DocSearch' => 'docs/algolia-docsearch',
-            'Custom 404 Page' => 'docs/custom-404-page',
+            //  membership
+            //  events
+            //  classes - payments, signoff processing
+            //  sign offs
+            //  SSO
+            //  rights
+            'Membership Design' => 'docs/design-membership',
         ],
     ],
-    'Jigsaw Docs' => 'https://jigsaw.tighten.co/docs/installation',
+    'Migration' => [
+        'url' => 'docs/migration-overview',
+        'children' => [
+            // members
+            // stripe
+            //
+            'Migrating Stripe' => 'docs/migration-stripe',
+
+        ],
+    ],
+    'Implementation' => [
+        'url' => 'docs/implementation-overview',
+        'children' => [
+            // data model
+            // civicrm modules
+            //
+
+        ],
+    ],
+    'Procedures' => [
+        'url' => 'docs/procedures-overview',
+        'children' => [
+            // user self
+            // user management by admin
+            //
+        ],
+    ],
+    'Github for these docs' => 'https://github.com/nova-labs/civicrm-nl-docs',
 ];
