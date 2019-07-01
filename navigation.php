@@ -5,7 +5,7 @@ return [
         'url' => 'docs/getting-started',
     ],
     'Design' => [
-        'url' => 'docs/design-overview',
+        'url' => 'docs/design/design-overview',
         'children' => [
             //  membership
             //  events
@@ -13,7 +13,7 @@ return [
             //  sign offs
             //  SSO
             //  rights
-            'Membership Design' => 'docs/design-membership',
+            'Membership Design' => 'docs/design/design-membership',
         ],
     ],
     'Migration' => [

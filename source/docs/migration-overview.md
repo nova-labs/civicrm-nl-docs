@@ -1,14 +1,25 @@
 ---
-title: Blank
-description: blank
+title: Migration overview
+description: Overview of migration steps
 extends: _layouts.documentation
 section: content
 ---
 
-# Page header {#page-header}
+# Overview {#overview}
 
-Start
+The migration is based on 
 
-## Page items {#page-items}
+## Prerequisites for migration {#prerequisites-for-migration}
 
-More notes 
+* CiviCRM installed as a WordPress plug in
+* other CiviCRM code and modules - need details  
+* Configuration of 
+
+## Migration activities
+
+
+## Testing
+
+
+## Post testing changes 
+
