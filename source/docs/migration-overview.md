@@ -11,9 +11,9 @@ The migration is based on
 
 ## Prerequisites for migration {#prerequisites-for-migration}
 
-* CiviCRM installed as a WordPress plug in
+* CiviCRM installed as a Drupal
 * other CiviCRM code and modules - need details  
-* Configuration of 
+* Configuration of CiviCRM
 
 ## Migration activities
 
