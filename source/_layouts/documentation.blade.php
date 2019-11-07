@@ -15,5 +15,8 @@
             @yield('content')
         </div>
     </div>
+    <div class="w-full text-center">
+        <b>Last updated {{date("F j, Y",$page->getModifiedTime())}}</b>
+    </div>
 </section>
 @endsection
